@@ -3,11 +3,10 @@
 pipeline {
     agent any
     
-    def MVHome = tool name: 'maven-1', type: 'maven'
-
        stages {
         stage("Build") {
             steps {
+     def MVHome = tool name: 'maven-1', type: 'maven'
                 sh "${MVHome}/bin/mvn -version"
                 sh "${MVHome}/bin/mvn clean install"
             }
